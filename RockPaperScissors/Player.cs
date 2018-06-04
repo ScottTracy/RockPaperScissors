@@ -10,11 +10,10 @@ namespace RockPaperScissors
     {
         public int score;
         public string name;
-        public string playerNumberString;
 
-        public virtual void SetName(Player player, string playerNumber)
+        public virtual void SetName(Player player, int playerNumber )
         {
-            Console.WriteLine("What is the name of " + (player.name) + "?");
+            Console.WriteLine("What is the name of player" +(playerNumber) + "?");
             player.name = Console.ReadLine();
         }
         public virtual int MakeChoice(Player player, List<string> gestures)

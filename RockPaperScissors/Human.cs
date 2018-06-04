@@ -28,10 +28,6 @@ namespace RockPaperScissors
             }
             return userChoice;
         }
-        public override void SetName(Player player, string PlayerNumber)
-        {
-            Console.WriteLine("What is the name of " + (PlayerNumber) + "?");
-            player.name = Console.ReadLine();
-        }
+       
     }
 }

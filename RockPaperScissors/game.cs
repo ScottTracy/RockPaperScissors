@@ -43,7 +43,8 @@ namespace RockPaperScissors
             InformUser(winner.name + " wins round !");
             if (newScore == 2)
             {
-                InformUser(winner.name + " won the game!  press <Enter> to start a new game.");                
+                InformUser(winner.name + " won the game!  press <Enter> to start a new game.");
+                StartGame(); 
             }
             else
             {
@@ -79,6 +80,8 @@ namespace RockPaperScissors
         public void StartGame()
         {
             SetPlayers();
+            player1.SetName(player1, 1);
+            player2.SetName(player2, 2);
             DetermineWinner(player1.MakeChoice(player1, gestures), player2.MakeChoice(player2, gestures));
         }
 

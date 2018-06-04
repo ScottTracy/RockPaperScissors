@@ -11,13 +11,13 @@ namespace RockPaperScissors
         public override int MakeChoice(Player player, List<string> gestures)
         {
             Random rnd = new Random();
-            int userChoice = rnd.Next(5);
-
+            int userChoice = rnd.Next(5);            
+            InformUser(player.name + " chooses " + gestures[userChoice]);
             return userChoice;
         }
-        public override void SetName(Player player, string PlayerNumber)
+        public override void SetName(Player player, int playerNumber)
         {
-            player.name = "Computer";
+            player.name = "Computer"; 
         }
     }
 }
