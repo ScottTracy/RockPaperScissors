@@ -14,7 +14,11 @@ namespace RockPaperScissors
         public int[,] winningGestureKeyKey = new int[,] { { 2, 4 }, { 0, 3 }, { 1, 4 }, { 0, 2 }, { 1, 3 } };
         Player player1;
         Player player2;
-        
+
+        public Game()
+        {
+        }
+
         public void DetermineWinner(int player1Choice, int player2Choice)
         {
             if (player1Choice == player2Choice)

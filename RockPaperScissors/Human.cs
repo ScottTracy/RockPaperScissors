@@ -8,8 +8,10 @@ namespace RockPaperScissors
 {
     class Human : Player
     {
-        
+        public Human()
+        {
 
+        }
         public override int MakeChoice(Player player, List<string> gestures)
         {
             Console.WriteLine(player.name + "'s turn. Choose a number corresponding to the gesture you would like to use.");
@@ -27,7 +29,7 @@ namespace RockPaperScissors
                 MakeChoice(player, gestures);
             }
             return userChoice;
+
         }
-       
     }
 }

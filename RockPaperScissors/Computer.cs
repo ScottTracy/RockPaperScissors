@@ -8,6 +8,11 @@ namespace RockPaperScissors
 {
     class Computer : Player
     {
+        public Computer()
+        {
+                
+        }
+
         public override int MakeChoice(Player player, List<string> gestures)
         {
             Random rnd = new Random();
