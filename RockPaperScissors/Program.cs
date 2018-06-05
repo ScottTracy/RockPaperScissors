@@ -12,6 +12,7 @@ namespace RockPaperScissors
         {
             Game game = new Game();
             game.StartGame();
+            
         }
     }
 }

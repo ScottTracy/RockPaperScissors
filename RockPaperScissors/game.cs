@@ -11,22 +11,25 @@ namespace RockPaperScissors
     {
         public List<string> gestures = new List<string> { "Rock", "Paper", "Scissors", "Spock", "Lizard" };
         
-        public int[,] winningGestureKeyKey = new int[,] { { 2, 4 }, { 0, 3 }, { 1, 4 }, { 0, 2 }, { 1, 3 } };
+       
         Player player1;
         Player player2;
-
+        Gestures gestureInstance;
         public Game()
         {
+            gestureInstance = new Gestures();
+            gestureInstance.MakeDictionary();
         }
 
         public void DetermineWinner(int player1Choice, int player2Choice)
         {
+            int[] checker = AccessValues(gestureInstance.winningGestures, player1Choice); 
             if (player1Choice == player2Choice)
             {
                 InformUser("Draw!  press <enter>  to continue");
                 DetermineWinner(player1.MakeChoice(player1,gestures), player2.MakeChoice(player2,gestures));
             }
-            else if (player2Choice == winningGestureKeyKey[player1Choice,0 ] || player2Choice == winningGestureKeyKey[player1Choice, 1])
+            else if (player2Choice == checker[0] || player2Choice == checker[1])
             {
                 UpdateWinner(player1);
             }
@@ -87,6 +90,10 @@ namespace RockPaperScissors
             player1.SetName(player1, 1);
             player2.SetName(player2, 2);
             DetermineWinner(player1.MakeChoice(player1, gestures), player2.MakeChoice(player2, gestures));
+        }
+        public int[] AccessValues(Dictionary<int,int[]> dictionary,int key)
+        {
+            return dictionary[key];
         }
 
     }

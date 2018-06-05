@@ -20,7 +20,7 @@ namespace RockPaperScissors
             Console.WriteLine("What is the name of player" +(playerNumber) + "?");
             player.name = Console.ReadLine();
         }
-        public abstract int MakeChoice(Player player, List<string> gestures)
+        public abstract int MakeChoice(Player player, List<string> gestures);
       
         public void InformUser(string message)
         {
